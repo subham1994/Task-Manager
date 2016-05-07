@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% block page_content %}
+	{% if diff_user %}
+	<h6 class="header-text">{{ cur_user.get_username }}'s pending tasks</h6>
+	{% else %}
+	<h6 class="header-text">your pending tasks</h6>
+	{% endif %}
+	<div class="row">
+		{% if todos %}
+			{% for todo in todos %}
+				<div class="col l4 m6 s12">
+					<div class="card">
+						<div class="card-content">
+						    <h6 class="title news-headline">{{ todo.title }}</h6>
+						    <h6 class="news-title">Pending | {{ todo.created_at }}</h6>
+						    <p class="news-text">{{ todo.desc }}</p>
+						</div>
+						{% if not diff_user %}
+						<div class="card-action">
+		                	<a href="/profile/delete_todo/{{ todo.id }}/"><i class="ion-checkmark"></i> Mark as Done</a>
+		                	<a href="/profile/edit_todo/{{ todo.id }}/"><i class="ion-edit"></i> Edit</a>
+			            </div>
+						{% endif %}
+			        </div>
+				</div>
+			{% endfor %}
+		{% else %}
+			<div class="col l12 m6 s12">
+				<div class="card-panel title news-headline center-align">
+					No tasks to show!!
+				</div>
+			</div>
+		{% endif %}
+	</div>
+
+	<h6 class="header-text">recently completed tasks</h6>
+	<div class="row">
+		{% if deleted_todos %}
+			{% for todo in deleted_todos %}
+				<div class="col l4 m6 s12">
+					<div class="card">
+						<div class="card-content">
+						    <h6 class="title news-headline">{{ todo.title }}</h6>
+						    <h6 class="news-title">completed | {{ todo.updated_at }}</h6>
+						    <p class="news-text">{{ todo.desc }}</p>
+						</div>
+						{% if not diff_user %}
+						<div class="card-action">
+		                	<a href="/delete_trash/{{ todo.id }}/"><i class="ion-trash-b"></i> Delete</a>
+			            </div>
+			            {% endif %}
+			        </div>
+				</div>
+			{% endfor %}
+		{% else %}
+				<div class="col l12 m6 s12">
+					<div class="card-panel title news-headline center-align">
+						No tasks to show!!
+					</div>
+				</div>
+		{% endif %}
+	</div>
+{% endblock %}

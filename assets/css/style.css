@@ -1,0 +1,186 @@
+@media (min-width: 993px) {
+    .container{
+        width: 90%;
+    }
+
+    .fixed {
+        width: 408px;
+        position: fixed;
+    }
+
+    .sidemenu {
+        width: 186px;
+        position: fixed;
+    }
+}
+
+@media (max-width: 993px) {
+    .container{
+        width: 90%;
+    }
+}
+
+#body-container {
+    margin-top: 25px;
+}
+
+nav {
+    background-color: #75ce66;
+}
+
+nav .brand-logo {
+    font-size: 22px;
+    font-weight: 600;
+    color: #FFF;
+}
+
+nav ul a {
+    font-weight: 600;
+    font-size: 12px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+
+#center-div {
+    margin-top: 75px;
+}
+
+.header-text {
+    font-weight: 800;
+    font-size: 16px;
+    color: #75ce66;
+    text-transform: uppercase;
+}
+
+.title.news-headline {
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #576366;
+}
+
+.news-text {
+    font-weight: 400;
+    font-size: 13px;
+    color: #455a64;
+}
+
+.news-title {
+    font-weight: 600;
+    font-size: 10px;
+    color: #75ce66;
+    text-transform: uppercase;
+}
+
+a.fixed-element {
+    position: fixed;
+    bottom: 30px;
+    right: 60px;
+    color: #FFF;
+    background-color: #75ce66;
+}
+
+a.fixed-element:hover {
+    background-color: #75ce66;
+}
+
+.collection a.collection-item {
+    color: #4285f4 !important;
+}
+
+.collection .collection-item.active {
+    color: #FFF !important;
+    background-color: #4285f4 !important;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    font-weight: 600;
+    font-size: 11px;
+    color: #455a64;
+}
+
+.dropdown-content li > a:hover, .dropdown-content li > span:hover {
+    font-weight: 600;
+    font-size: 11px;
+    color: #FFF;
+    background-color: #75ce66;
+}
+
+.side-nav li > a:hover {
+    color: #FFF;
+    background-color: #75ce66;
+}
+
+.side-nav li:hover {
+    color: #FFF;
+    background-color: #75ce66;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
+    font-weight: 700;
+    font-size: 11px;
+    color: #455a64;
+    text-transform: uppercase;
+}
+
+.card .card-action a.disabled:not(.btn):not(.btn-large):not(.btn-floating) {
+    font-weight: 700;
+    font-size: 11px;
+    color: #455a64;
+    text-transform: uppercase;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):not(.disabled):hover {
+    font-weight: 700;
+    font-size: 11px;
+    color: #75ce66;
+    text-transform: uppercase;
+}
+
+.btn {
+    color: #FFF;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    cursor: pointer;
+    text-align: center;
+    line-height: 36px;
+}
+
+.btn-block {
+    display: block;
+}
+
+.input-field label.active {
+    color: #75ce66;
+}
+
+input:not([type]), input[type="text"], input[type="password"],
+input[type="email"], input[type="url"], input[type="time"],
+input[type="date"], input[type="datetime-local"],
+input[type="tel"], input[type="number"], input[type="search"],
+textarea.materialize-textarea, .select-wrapper input.select-dropdown {
+    border-bottom: 1px solid #cfd8dc;
+}
+
+.input-field input[type="password"]:focus {
+    border-bottom: 1px solid #75ce66;
+    box-shadow: 0 1px 0 0 #75ce66;
+}
+
+.input-field textarea.materialize-textarea:focus {
+    border-bottom: 1px solid #75ce66;
+    box-shadow: 0 1px 0 0 #75ce66;
+}
+
+.input-field input[type="text"]:focus {
+    border-bottom: 1px solid #75ce66;
+    box-shadow: 0 1px 0 0 #75ce66;
+}
+
+.chip.custom-chip {
+    background-color: #75ce66;
+    color: #FFF;
+}

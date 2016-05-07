@@ -1,0 +1,51 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <title>TO-D0 APP</title>
+
+        <!-- CSS  -->
+
+        <link href="{% static 'assets/css/materialize.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="{% static 'assets/css/ionicons.min.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="{% static 'assets/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
+
+
+    <body>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="container">
+                    <a href="/" class="brand-logo">TASK-MANAGER</a>
+                    <ul class="right hide-on-med-and-down">
+                        {% if user.is_authenticated %}
+                            <li><a href="/profile/">{{ user.get_full_name }}</a></li>
+                            <li><a href="/logout/">logout</a></li>
+                        {% else %}
+                            <li><a href="/login/">login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="container" id="body-container">
+            <div class="section">
+                {% block header %}
+                {% endblock %}
+                {% block page_content %}
+                {% endblock %}
+            </div>
+        </div>
+
+
+        <!--  Scripts-->
+        <script src="{% static 'assets/js/jquery.js' %}"></script>
+        <script src="{% static 'assets/js/materialize.min.js' %}"></script>
+        <script src="{% static 'assets/js/scripts.js' %}"></script>
+    </body>
+</html>

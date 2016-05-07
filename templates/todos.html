@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block page_content %}
+	<div class="row">
+		{% for todo in todos %}
+			<div class="col l4 m6 s12">
+				<div class="card">
+					<div class="card-content">
+					    <h6 class="title news-headline">{{ todo.title }}</h6>
+					    <h6 class="news-title">
+					    	<a href="/get_user/{{ todo.creator.id }}/" class="news-title">{{ todo.creator.get_full_name }}</a> 
+					    	<b>|</b> {{ todo.created_at }}
+					    	</h6>
+					    <p class="news-text">{{ todo.desc }}</p>
+					</div>
+					<div class="card-action">
+						{% if user.is_authenticated and todo.creator == user %}
+		                	<a href="/delete_todo/{{ todo.id }}/"><i class="ion-checkmark"></i> Mark as Done</a>
+			                <a href="/edit_todo/{{ todo.id }}/"><i class="ion-edit"></i> Edit</a>
+		                {% else %}
+		                	<a class="disabled tooltipped" data-position="bottom" data-delay="50" 
+		                	   data-tooltip="You are not authorized to mark this task!"><i class="ion-checkmark"></i> Mark as Done</a>
+		                	<a class="disabled tooltipped" data-position="bottom" data-delay="50" 
+		                	   data-tooltip="You are not authorized to edit this task!"><i class="ion-edit"></i> Edit</a>
+		                {% endif %}
+		            </div>
+		        </div>
+			</div>
+		{% endfor %}
+	</div>
+	<a href="/add_todo/" class="btn-floating btn-large waves-effect waves-light fixed-element"><i class="ion-plus"></i></a>    
+{% endblock %}
