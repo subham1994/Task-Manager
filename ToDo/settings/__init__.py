@@ -4,7 +4,7 @@ try:
 	from .local import *
 	live = False
 except:
-	live = true
+	live = True
 
 if live:
 	from .production import *
