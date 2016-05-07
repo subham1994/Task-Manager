@@ -15,8 +15,8 @@ def delete_db_entry(id):
 		pass
 
 def get_profile_data(todos):
-	pending_todos = todos.exclude(is_deleted=True)
-	deleted_todos = todos.filter(is_deleted=True)
+	pending_todos = todos.exclude(is_deleted=True).order_by('-created_at')
+	deleted_todos = todos.filter(is_deleted=True).order_by('-updated_at')
 	return (pending_todos, deleted_todos)
 
 def home(request):
