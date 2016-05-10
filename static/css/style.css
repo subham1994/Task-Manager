@@ -12,11 +12,27 @@
         width: 186px;
         position: fixed;
     }
+
+    a.fixed-element {
+        position: fixed;
+        bottom: 30px;
+        right: 60px;
+        color: #FFF;
+        background-color: rgb(255,64,129);
+    }
 }
 
 @media (max-width: 993px) {
     .container{
         width: 90%;
+    }
+
+    a.fixed-element {
+        position: fixed;
+        bottom: 25px;
+        right: 40px;
+        color: #FFF;
+        background-color: rgb(255,64,129);
     }
 }
 
@@ -25,7 +41,7 @@
 }
 
 nav {
-    background-color: #75ce66;
+    background-color: #4285f4;
 }
 
 nav .brand-logo {
@@ -48,7 +64,7 @@ nav ul a {
 .header-text {
     font-weight: 800;
     font-size: 16px;
-    color: #75ce66;
+    color: rgb(65, 163, 255);
     text-transform: uppercase;
 }
 
@@ -68,20 +84,21 @@ nav ul a {
 .news-title {
     font-weight: 600;
     font-size: 10px;
-    color: #75ce66;
+    color: #4285f4;
     text-transform: uppercase;
 }
 
-a.fixed-element {
-    position: fixed;
-    bottom: 30px;
-    right: 60px;
-    color: #FFF;
-    background-color: #75ce66;
+a.fixed-element:hover {
+    background-color: rgb(255,64,129);
 }
 
-a.fixed-element:hover {
-    background-color: #75ce66;
+#close-modal {
+    position: fixed;
+    top: 7px;
+    right: 7px;
+    color: black;
+    font-weight: 600;
+    font-size: 12px;
 }
 
 .collection a.collection-item {
@@ -103,17 +120,17 @@ a.fixed-element:hover {
     font-weight: 600;
     font-size: 11px;
     color: #FFF;
-    background-color: #75ce66;
+    background-color: #4285f4;
 }
 
 .side-nav li > a:hover {
     color: #FFF;
-    background-color: #75ce66;
+    background-color: #4285f4;
 }
 
 .side-nav li:hover {
     color: #FFF;
-    background-color: #75ce66;
+    background-color: #4285f4;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
@@ -133,7 +150,7 @@ a.fixed-element:hover {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):not(.disabled):hover {
     font-weight: 700;
     font-size: 11px;
-    color: #75ce66;
+    color: #4285f4;
     text-transform: uppercase;
 }
 
@@ -153,8 +170,15 @@ a.fixed-element:hover {
     display: block;
 }
 
+.input-field label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
 .input-field label.active {
-    color: #75ce66;
+    font-weight: 600;
+    font-size: 14px;
+    color: #4285f4;
 }
 
 input:not([type]), input[type="text"], input[type="password"],
@@ -166,21 +190,21 @@ textarea.materialize-textarea, .select-wrapper input.select-dropdown {
 }
 
 .input-field input[type="password"]:focus {
-    border-bottom: 1px solid #75ce66;
-    box-shadow: 0 1px 0 0 #75ce66;
+    border-bottom: 1px solid #4285f4;
+    box-shadow: 0 1px 0 0 #4285f4;
 }
 
 .input-field textarea.materialize-textarea:focus {
-    border-bottom: 1px solid #75ce66;
-    box-shadow: 0 1px 0 0 #75ce66;
+    border-bottom: 1px solid #4285f4;
+    box-shadow: 0 1px 0 0 #4285f4;
 }
 
 .input-field input[type="text"]:focus {
-    border-bottom: 1px solid #75ce66;
-    box-shadow: 0 1px 0 0 #75ce66;
+    border-bottom: 1px solid #4285f4;
+    box-shadow: 0 1px 0 0 #4285f4;
 }
 
 .chip.custom-chip {
-    background-color: #75ce66;
+    background-color: rgb(103,58,183);
     color: #FFF;
 }

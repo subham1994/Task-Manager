@@ -1,0 +1,31 @@
+{% if action %}
+<h6 class="right-align header-text">Edit Task</h6>
+{% else %}
+<h6 class="right-align header-text">Add Task</h6>
+{% endif %}
+<div class="error-area center">
+	
+</div>
+
+{% if action %}
+<form method="post" action="{{ action }}" id="edit_todo_form">
+{% else %}
+<form method="post" action="/add_todo/" id="add_todo_form">
+{% endif %}
+	{% csrf_token %}
+	<div class="input-field">
+	    <label for="id_title">Title</label>
+	    {{ form.title }}
+	</div>
+	<div class="input-field">
+	    <label for="id_desc">Description</label>
+	    {{ form.desc }}
+	</div>
+	<div class="right-align">
+		{% if action %}
+		<button class="btn btn-flat waves-effect waves-light blue" type="submit">Save changes</button>
+		{% else %}
+		<button class="btn btn-flat waves-effect waves-light blue" type="submit">add</button>
+		{% endif %}
+	</div>
+</form>

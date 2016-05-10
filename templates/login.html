@@ -19,15 +19,15 @@
 					{% csrf_token %}
 						<div class="input-field">
 						    <label for="id_username">username</label>
-						    <input id="id_username" maxlength="254" name="username" type="text" class="validate"/>
+						    <input id="id_username" maxlength="254" name="username" type="text"/>
 						</div>
 						<div class="input-field">
 						    <label for="id_password">password</label>
-						    <input id="id_password" name="password" type="password" class="validate"/>
+						    <input id="id_password" name="password" type="password"/>
 						</div>
 
 						<div class="right-align">
-							<button class="btn btn-flat waves-effect waves-light green" type="submit">login</button>
+							<button class="btn btn-flat waves-effect waves-light blue" type="submit">login</button>
 						</div>
 						<input type="hidden" name="next" value="{{ next }}" />
 					</form>

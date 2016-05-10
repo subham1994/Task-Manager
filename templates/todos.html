@@ -17,7 +17,7 @@
 					<div class="card-action">
 						{% if user.is_authenticated and todo.creator == user %}
 		                	<a href="/delete_todo/{{ todo.id }}/"><i class="ion-checkmark-circled"></i> Mark as Done</a>
-			                <a href="/edit_todo/{{ todo.id }}/"><i class="ion-edit"></i> Edit</a>
+			                <a href="/edit_todo/{{ todo.id }}/" class="edit-todo" data-id="{{ todo.id }}"><i class="ion-edit"></i> Edit</a>
 		                {% else %}
 		                	<a class="disabled tooltipped" data-position="bottom" data-delay="50" 
 		                	   data-tooltip="You are not authorized to mark this task!"><i class="ion-checkmark-circled"></i> Mark as Done</a>
@@ -29,5 +29,18 @@
 			</div>
 		{% endfor %}
 	</div>
-	<a href="/add_todo/" class="btn-floating btn-large waves-effect waves-light fixed-element"><i class="ion-plus"></i></a>    
+	{% if user.is_authenticated %}
+	<a href="add_todo" class="btn-floating btn-large waves-effect waves-light fixed-element tooltipped"
+	   data-position="left" data-delay="50" data-tooltip="Add a new task?">
+		<i class="ion-plus"></i>
+	</a> 
+	{% endif %}
+
+	<!-- Modal Structure -->
+	<div id="modal1" class="modal">
+		<a href="#!" class="modal-close" id="close-modal">&#10006</a>
+	    <div class="modal-content">
+	        <!-- Form to be loaded dynamically -->
+	    </div>
+	</div>  
 {% endblock %}
