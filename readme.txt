@@ -7,7 +7,7 @@ How to run the project:
 	3. run manage.py file (python manage.py runserver).
 	4. Open localhost:8000 in the browser.
 
-ScholarsHub Features:
+Task-Manager Features:
 	- Users can login to the website.
 	- Users can create todos, edit them and mark them as complete if it was created by them.
 	- Users can see the pending todos and the ones recently completed (like trash on google keep) on their profile page. 
