@@ -72,31 +72,32 @@ $(document).ready(function(){
     	}
     }
 		      
-	// load add to-do form to modal dynamically
-	$("a.fixed-element").click(function (event) {
-		event.preventDefault();
-		openModal('#modal1');
+    // load add to-do form to modal dynamically
+    $("a.fixed-element").click(function (event) {
+    	event.preventDefault();
+    	openModal('#modal1');
     	makeAjaxRequest('/add_todo/', 'get', {}, 'html', true, null, function(response) {
     		$('.modal-content').html(response);
     		post_todo_form();
     	});
     });
-
-	// post the form data
-	function post_todo_form() {
-		$("#add_todo_form").submit(function (event) {
-			event.preventDefault();
-			var data = { title: $("#id_title").val(), desc: $("#id_desc").val() }
-			makeAjaxRequest('/add_todo/', 'post', data, null, true, csrftoken, function(response) {
-				doCommonPostWork(response, '.error-area');
-			});
+    
+    // post the form data
+    function post_todo_form() {
+    	$("#add_todo_form").submit(function (event) {
+    		event.preventDefault();
+    		var data = { title: $("#id_title").val(), desc: $("#id_desc").val() }
+    		makeAjaxRequest('/add_todo/', 'post', data, null, true, csrftoken, function(response) {
+    			doCommonPostWork(response, '.error-area');
 		});
-	}
-
-	// load edit to-do form to modal dynamically
-	$(".edit-todo").click(function (event) {
-		event.preventDefault();
-		var todo_id = $(this).data("id");
+	});
+    	
+    }
+    
+    // load edit to-do form to modal dynamically
+    $(".edit-todo").click(function (event) {
+    	event.preventDefault();
+    	var todo_id = $(this).data("id");
         openModal('#modal1');
         makeAjaxRequest('/edit_todo/', 'get', {id: todo_id}, 'html', true, null, function(response) {
         	$('.modal-content').html(response);
